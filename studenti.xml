@@ -12,6 +12,14 @@
         <Nume>Ion</Nume>
         <Grupa>227</Grupa>
     </student>
+    <student ID="testingBVA3">
+        <Nume>BVA TEST</Nume>
+        <Grupa>111</Grupa>
+    </student>
+    <student ID="testingBVA4">
+        <Nume>BVA TEST</Nume>
+        <Grupa>937</Grupa>
+    </student>
     <student ID="testID">
         <Nume>TestNume</Nume>
         <Grupa>933</Grupa>
