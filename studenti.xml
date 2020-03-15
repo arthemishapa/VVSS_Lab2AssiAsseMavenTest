@@ -8,9 +8,17 @@
         <Nume>Maria</Nume>
         <Grupa>222</Grupa>
     </student>
+    <student ID="testingBVA9">
+        <Nume>BVA TEST</Nume>
+        <Grupa>933</Grupa>
+    </student>
     <student ID="4">
         <Nume>Ion</Nume>
         <Grupa>227</Grupa>
+    </student>
+    <student ID="testingBVA6">
+        <Nume>BVA TEST</Nume>
+        <Grupa>933</Grupa>
     </student>
     <student ID="testingBVA3">
         <Nume>BVA TEST</Nume>
