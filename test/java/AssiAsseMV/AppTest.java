@@ -78,7 +78,7 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void addStudent()
+    public void addStudentTC1()
     {
         char[] textId = new char[10];
         Random random = new Random();
