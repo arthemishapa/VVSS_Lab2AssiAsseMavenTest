@@ -77,7 +77,7 @@ public class AppTest
         NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
 
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-        assertEquals(1, service.saveStudent("testingBVA1", "BVA TEST", 109));
+        assertEquals(1, service.saveStudent("testingBVA1", "BVA TEST", 111));
     }
 
     @Test(expected = ValidationException.class)
@@ -107,7 +107,7 @@ public class AppTest
         NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
 
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-        assertEquals(0, service.saveStudent("", "", 111));
+        assertEquals(0, service.saveStudent("", "", 109));
     }
 
     @Test
