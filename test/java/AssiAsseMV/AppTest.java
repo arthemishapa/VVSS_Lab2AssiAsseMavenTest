@@ -9,6 +9,8 @@ import repository.TemaXMLRepository;
 import service.Service;
 import validation.*;
 
+import java.util.Random;
+
 import static org.junit.Assert.*;
 
 /**
@@ -16,11 +18,13 @@ import static org.junit.Assert.*;
  */
 public class AppTest
 {
+    public static final String SOURCES =
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
     /**
      * Rigorous Test :-)
      */
     @Test
-    public void addStudent()
+    public void addStudentTC1()
     {
         Validator<Student> studentValidator = new StudentValidator();
         Validator<Tema> temaValidator = new TemaValidator();
@@ -31,11 +35,16 @@ public class AppTest
         NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
 
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-        assertEquals(0, service.saveStudent("testID", "TestNume", 933));
+        char[] textId = new char[10];
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            textId[i] = SOURCES.charAt(random.nextInt(SOURCES.length()));
+        }
+        assertEquals(1, service.saveStudent(new String(textId), "TestNume", 933));
     }
 
     @Test(expected = ValidationException.class)
-    public void addInvalidStudent()
+    public void addStudentTC2()
     {
         Validator<Student> studentValidator = new StudentValidator();
         Validator<Tema> temaValidator = new TemaValidator();
@@ -64,9 +73,8 @@ public class AppTest
         assertEquals(1, service.saveStudent(null, null, 939));
     }
 
-
-    @Test
-    public void addStudentBVA1()
+    @Test(expected = ValidationException.class)
+    public void addStudentTC4()
     {
         Validator<Student> studentValidator = new StudentValidator();
         Validator<Tema> temaValidator = new TemaValidator();
@@ -77,11 +85,26 @@ public class AppTest
         NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
 
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-        assertEquals(1, service.saveStudent("testingBVA1", "BVA TEST", 111));
+        assertEquals(1, service.saveStudent("", "", 109));
     }
 
     @Test(expected = ValidationException.class)
-    public void addStudentBVA2()
+    public void addStudentTC5()
+    {
+        Validator<Student> studentValidator = new StudentValidator();
+        Validator<Tema> temaValidator = new TemaValidator();
+        Validator<Nota> notaValidator = new NotaValidator();
+
+        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
+        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
+        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
+
+        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
+        assertEquals(1, service.saveStudent(null, null, 109));
+    }
+
+    @Test(expected = ValidationException.class)
+    public void addStudentTC6()
     {
         Validator<Student> studentValidator = new StudentValidator();
         Validator<Tema> temaValidator = new TemaValidator();
@@ -96,7 +119,7 @@ public class AppTest
     }
 
     @Test(expected = ValidationException.class)
-    public void addStudentBVA3()
+    public void addStudentTC7()
     {
         Validator<Student> studentValidator = new StudentValidator();
         Validator<Tema> temaValidator = new TemaValidator();
@@ -107,11 +130,11 @@ public class AppTest
         NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
 
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-        assertEquals(0, service.saveStudent("", "", 109));
+        assertEquals(1, service.saveStudent("", "", 110));
     }
 
     @Test
-    public void addStudentBVA4()
+    public void addStudentTC8()
     {
         Validator<Student> studentValidator = new StudentValidator();
         Validator<Tema> temaValidator = new TemaValidator();
@@ -122,11 +145,38 @@ public class AppTest
         NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
 
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-        assertEquals(0, service.saveStudent("testingBVA4", "BVA TEST", 937));
+
+        char[] textId = new char[10];
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            textId[i] = SOURCES.charAt(random.nextInt(SOURCES.length()));
+        }
+        assertEquals(1, service.saveStudent(new String(textId), "TestNume", 111));
+    }
+
+    @Test
+    public void addStudentTC9()
+    {
+        Validator<Student> studentValidator = new StudentValidator();
+        Validator<Tema> temaValidator = new TemaValidator();
+        Validator<Nota> notaValidator = new NotaValidator();
+
+        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
+        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
+        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
+
+        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
+
+        char[] textId = new char[10];
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            textId[i] = SOURCES.charAt(random.nextInt(SOURCES.length()));
+        }
+        assertEquals(1, service.saveStudent(new String(textId), "BVA TEST", 937));
     }
 
     @Test(expected = ValidationException.class)
-    public void addStudentBVA5()
+    public void addStudentTC10()
     {
         Validator<Student> studentValidator = new StudentValidator();
         Validator<Tema> temaValidator = new TemaValidator();
@@ -141,7 +191,7 @@ public class AppTest
     }
 
     @Test(expected = ValidationException.class)
-    public void addStudentBVA6()
+    public void addStudentTC11()
     {
         Validator<Student> studentValidator = new StudentValidator();
         Validator<Tema> temaValidator = new TemaValidator();
@@ -152,6 +202,7 @@ public class AppTest
         NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
 
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-        assertEquals(1, service.saveStudent("", "", 939));
+        assertEquals(1, service.saveStudent("", "", 938));
     }
+
 }
