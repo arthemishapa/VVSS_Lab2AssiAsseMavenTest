@@ -137,7 +137,7 @@ public class AppTest
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
 
 
-        assertEquals(1, service.saveStudent("testingBVA2", "BVA TEST", 110));
+        assertEquals(1, service.saveStudent(null, null, 110));
     }
 
     @Test
@@ -154,7 +154,7 @@ public class AppTest
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
 
 
-        assertEquals(0, service.saveStudent("testingBVA3", "BVA TEST", 111));
+        assertEquals(0, service.saveStudent("", "", 111));
     }
 
     @Test
@@ -188,7 +188,7 @@ public class AppTest
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
 
 
-        assertEquals(1, service.saveStudent("testingBVA5", "BVA TEST", 938));
+        assertEquals(1, service.saveStudent(null, null, 938));
     }
 
     @Test
@@ -205,107 +205,6 @@ public class AppTest
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
 
 
-        assertEquals(1, service.saveStudent("testingBVA6", "BVA TEST", 939));
-    }
-
-    @Test
-    public void addStudentBVA7()
-    {
-        Validator<Student> studentValidator = new StudentValidator();
-        Validator<Tema> temaValidator = new TemaValidator();
-        Validator<Nota> notaValidator = new NotaValidator();
-
-        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
-        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
-
-        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-
-
-        assertEquals(1, service.saveStudent("", "BVA TEST", 933));
-    }
-
-    @Test
-    public void addStudentBVA8()
-    {
-        Validator<Student> studentValidator = new StudentValidator();
-        Validator<Tema> temaValidator = new TemaValidator();
-        Validator<Nota> notaValidator = new NotaValidator();
-
-        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
-        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
-
-        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-
-
-        assertEquals(1, service.saveStudent(null, "BVA TEST", 933));
-    }
-
-    @Test
-    public void addStudentBVA9()
-    {
-        Validator<Student> studentValidator = new StudentValidator();
-        Validator<Tema> temaValidator = new TemaValidator();
-        Validator<Nota> notaValidator = new NotaValidator();
-
-        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
-        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
-
-        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-
-
-        assertEquals(0, service.saveStudent("testingBVA9", "BVA TEST", 934));
-    }
-
-    @Test
-    public void addStudentBVA10()
-    {
-        Validator<Student> studentValidator = new StudentValidator();
-        Validator<Tema> temaValidator = new TemaValidator();
-        Validator<Nota> notaValidator = new NotaValidator();
-
-        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
-        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
-
-        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-
-
-        assertEquals(1, service.saveStudent("testingBVA4", "", 933));
-    }
-
-    @Test
-    public void addStudentBVA11()
-    {
-        Validator<Student> studentValidator = new StudentValidator();
-        Validator<Tema> temaValidator = new TemaValidator();
-        Validator<Nota> notaValidator = new NotaValidator();
-
-        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
-        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
-
-        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-
-        assertEquals(1, service.saveStudent("testingBVA5", null, 933));
-    }
-
-    @Test
-    public void addStudentBVA12()
-    {
-        Validator<Student> studentValidator = new StudentValidator();
-        Validator<Tema> temaValidator = new TemaValidator();
-        Validator<Nota> notaValidator = new NotaValidator();
-
-        StudentXMLRepository fileRepository1 = new StudentXMLRepository(studentValidator, "studenti.xml");
-        TemaXMLRepository fileRepository2 = new TemaXMLRepository(temaValidator, "teme.xml");
-        NotaXMLRepository fileRepository3 = new NotaXMLRepository(notaValidator, "note.xml");
-
-        Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
-
-
-        assertEquals(0, service.saveStudent("testingBVA6", "BVA TEST 12", 933));
+        assertEquals(1, service.saveStudent("", "", 939));
     }
 }
