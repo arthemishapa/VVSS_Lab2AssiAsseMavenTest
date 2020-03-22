@@ -78,7 +78,7 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void addStudentTC1()
+    public void addStudent()
     {
         char[] textId = new char[10];
         Random random = new Random();
@@ -91,37 +91,37 @@ public class AppTest
     @Test(expected = ValidationException.class)
     public void addStudentTC2()
     {
-        assertEquals(1, service.saveStudent("", "", 939));
+        assertEquals(0, service.saveStudent("", "", 939));
     }
 
     @Test(expected = ValidationException.class)
     public void addStudentTC3()
     {
-        assertEquals(1, service.saveStudent(null, null, 939));
+        assertEquals(0, service.saveStudent(null, null, 939));
     }
 
     @Test(expected = ValidationException.class)
     public void addStudentTC4()
     {
-        assertEquals(1, service.saveStudent("", "", 109));
+        assertEquals(0, service.saveStudent("", "", 109));
     }
 
     @Test(expected = ValidationException.class)
     public void addStudentTC5()
     {
-        assertEquals(1, service.saveStudent(null, null, 109));
+        assertEquals(0, service.saveStudent(null, null, 109));
     }
 
     @Test(expected = ValidationException.class)
     public void addStudentTC6()
     {
-        assertEquals(1, service.saveStudent(null, null, 110));
+        assertEquals(0, service.saveStudent(null, null, 110));
     }
 
     @Test(expected = ValidationException.class)
     public void addStudentTC7()
     {
-        assertEquals(1, service.saveStudent("", "", 110));
+        assertEquals(0, service.saveStudent("", "", 110));
     }
 
     @Test
@@ -149,13 +149,13 @@ public class AppTest
     @Test(expected = ValidationException.class)
     public void addStudentTC10()
     {
-        assertEquals(1, service.saveStudent(null, null, 938));
+        assertEquals(0, service.saveStudent(null, null, 938));
     }
 
     @Test(expected = ValidationException.class)
     public void addStudentTC11()
     {
-        assertEquals(1, service.saveStudent("", "", 938));
+        assertEquals(0, service.saveStudent("", "", 938));
     }
 
 }
