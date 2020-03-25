@@ -157,5 +157,15 @@ public class AppTest
     {
         assertEquals(0, service.saveStudent("", "", 938));
     }
+    @Test(expected = ValidationException.class)
+    public void addAssignmentTC1()
+    {
+        assertEquals(0, service.saveTema("4", "test", 16, 5));
+    }
 
+    @Test
+    public void addAssignmentTC2()
+    {
+        assertEquals(1, service.saveTema("4", "test", 8, 5));
+    }
 }
