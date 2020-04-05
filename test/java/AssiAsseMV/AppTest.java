@@ -170,37 +170,37 @@ public class AppTest
     }
 
     @Test(expected = ValidationException.class)
-    public void addAssignmentWBT1()
+    public void addAssignmentTC3()
     {
         assertEquals(1, service.saveTema("", "test", 8, 5));
     }
 
     @Test(expected = ValidationException.class)
-    public void addAssignmentWBT2()
+    public void addAssignmentTC4()
     {
         assertEquals(1, service.saveTema("8", "", 8, 5));
     }
 
     @Test(expected = ValidationException.class)
-    public void addAssignmentWBT3()
+    public void addAssignmentTC5()
     {
         assertEquals(1, service.saveTema("8", "test", 17, 5));
     }
 
     @Test(expected = ValidationException.class)
-    public void addAssignmentWBT4()
+    public void addAssignmentTC6()
     {
         assertEquals(1, service.saveTema("8", "test", 2, 5));
     }
 
     @Test
-    public void addAssignmentWBT5()
+    public void addAssignmentTC7()
     {
         assertEquals(1, service.saveTema("8", "test", 6, 5));
     }
 
     @Test
-    public void addAssignmentWBT6()
+    public void addAssignmentTC8()
     {
         service.saveTema("1", "File", 7, 6);
         assertEquals(0, service.saveTema("1", "File", 7, 6));
