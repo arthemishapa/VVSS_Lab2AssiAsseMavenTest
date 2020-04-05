@@ -205,4 +205,11 @@ public class AppTest
         service.saveTema("1", "File", 7, 6);
         assertEquals(0, service.saveTema("1", "File", 7, 6));
     }
+
+    @Test
+    public void addAssignmentTC9()
+    {
+        service.saveTema("1", "File", 7, 6);
+        assertEquals(0, service.saveTema("1", "File", 7, 6));
+    }
 }
