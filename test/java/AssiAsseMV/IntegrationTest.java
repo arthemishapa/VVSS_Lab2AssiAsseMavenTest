@@ -104,7 +104,7 @@ public class IntegrationTest
     }
 
     @Test
-    public void addIntegrationTC1()
+    public void addIntegrationIntegrationTC1()
     {
         assertEquals(1, service.saveStudent("11112", "TestNume", 933));
         assertEquals(1, service.saveTema("101", "test", 6, 5));
