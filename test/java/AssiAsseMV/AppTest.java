@@ -80,12 +80,12 @@ public class AppTest
     @Test
     public void addStudentTC1()
     {
-        char[] textId = new char[10];
-        Random random = new Random();
-        for (int i = 0; i < 10; i++) {
-            textId[i] = SOURCES.charAt(random.nextInt(SOURCES.length()));
-        }
-        assertEquals(1, service.saveStudent(new String(textId), "TestNume", 933));
+        //char[] textId = new char[10];
+        //Random random = new Random();
+        //for (int i = 0; i < 10; i++) {
+        //    textId[i] = SOURCES.charAt(random.nextInt(SOURCES.length()));
+        //}
+        assertEquals(1, service.saveStudent("111", "TestNume", 933));
     }
 
     @Test(expected = ValidationException.class)
@@ -211,5 +211,19 @@ public class AppTest
     {
         service.saveTema("1", "File", 7, 6);
         assertEquals(0, service.saveTema("1", "File", 7, 6));
+    }
+
+    @Test
+    public void addGradeTC1()
+    {
+        assertEquals(0, service.saveNota("111", "4", 7, 7, "ok"));
+    }
+
+    @Test
+    public void addIntegrationTC1()
+    {
+        addStudentTC1();
+        addAssignmentTC2();
+        addGradeTC1();
     }
 }
