@@ -78,7 +78,7 @@ public class IntegrationTest
      * Rigorous Test :-)
      */
     @Test
-    public void addStudentTC1()
+    public void addStudentIntegrationTC1()
     {
         char[] textId = new char[10];
         Random random = new Random();
@@ -90,13 +90,13 @@ public class IntegrationTest
 
 
     @Test
-    public void addAssignmentTC1()
+    public void addAssignmentIntegrationTC1()
     {
         assertEquals(1, service.saveTema("4", "test", 8, 5));
     }
 
     @Test
-    public void addGradeTC1()
+    public void addGradeIntegrationTC1()
     {
         service.saveStudent("1111", "TestNume", 933);
         service.saveTema("10", "test", 6, 5);
