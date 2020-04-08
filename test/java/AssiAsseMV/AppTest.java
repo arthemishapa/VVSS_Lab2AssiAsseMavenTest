@@ -216,7 +216,7 @@ public class AppTest
     @Test
     public void addGradeTC1()
     {
-        assertEquals(0, service.saveNota("111", "4", 7, 7, "ok"));
+        assertEquals(1, service.saveNota("111", "4", 7, 7, "ok"));
     }
 
     @Test
