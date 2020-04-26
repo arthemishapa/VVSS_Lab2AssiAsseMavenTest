@@ -228,4 +228,11 @@ public class AppTest
         assertEquals(1, service.saveTema("101", "test", 6, 5));
         assertEquals(1, service.saveNota("11112", "101", 7, 6, "ok"));
     }
+    @Test
+    public void addStudentAssignmentIntegrationTC1()
+    {
+        assertEquals(1, service.saveStudent("11113", "TestNume3", 933));
+        assertEquals(1, service.saveTema("1013", "test3", 6, 5));
+    }
+
 }
